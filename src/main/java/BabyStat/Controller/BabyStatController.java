@@ -15,8 +15,14 @@ public class BabyStatController {
     @Autowired
     private BabyDao babyDao;
 
+
+    @GetMapping
+    public String welcome() {
+        return "welcome";
+    }
+
     @GetMapping("children")
-    public String users(Model model) {
+    public String children(Model model) {
         model.addAttribute("children", babyDao.getChildren());
         return "children";
     }

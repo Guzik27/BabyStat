@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"><!--th:replace="~{fragments/layout :: layout(~{::.container})}"-->
+<!--<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.container})}">
 <head>
     <meta charset="UTF-8">
     <title>Baby</title>
 </head>
-<body>
+<body>-->
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../static/css/uikit.css" th:href="@{css/uikit.css}">
+    <script src="../static/js/uikit.min.js" th:src="@{js/uikit.js}"></script>
+    <script src="../static/js/uikit-icons.min.js" th:src="@{js/uikit-icons.js}"></script>
+    <meta charset="UTF-8">
+    <title>Testy</title>
+</head>
 
 <div class="container">
     <form style="width: 400px; margin: auto" th:action="@{/children/save}" th:object="${baby}" method="post">
-        <div class="uk-margin">
-            <label>Baby</label>
+            <div class="uk-margin">
+            <label>Imię</label>
             <input th:field="*{name}" type="string" class="uk-input">
         </div>
         <div class="uk-margin">
@@ -26,4 +34,3 @@
 
 </body>
 </html>
->
