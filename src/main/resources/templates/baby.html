@@ -1,36 +1,23 @@
 <!DOCTYPE html>
-<!--<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.container})}">
-<head>
-    <meta charset="UTF-8">
-    <title>Baby</title>
-</head>
-<body>-->
-<html xmlns:th="https://www.thymeleaf.org">
-<head>
-    <link rel="stylesheet" href="../static/css/uikit.css" th:href="@{css/uikit.css}">
-    <script src="../static/js/uikit.min.js" th:src="@{js/uikit.js}"></script>
-    <script src="../static/js/uikit-icons.min.js" th:src="@{js/uikit-icons.js}"></script>
-    <meta charset="UTF-8">
-    <title>Testy</title>
-</head>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.container})}">
+
+<body>
 
 <div class="container">
-    <form style="width: 400px; margin: auto" th:action="@{/children/save}" th:object="${baby}" method="post">
-            <div class="uk-margin">
+      <form style="width: 400px; margin: auto" th:action="@{/children/save}" th:object="${baby}" method="post">
+        <div class="uk-margin">
             <label>Imię</label>
-            <input th:field="*{name}" type="string" class="uk-input">
+            <input th:field="*{name}" class="uk-input" type="text">
         </div>
         <div class="uk-margin">
-            <label>Id</label>
-            <input th:field="*{id}" type="number" class="uk-input">
+            <label>ID</label>
+            <input th:field="*{id}" class="uk-input" type="number">
         </div>
 
-        <input th:field="*{id}" type="number" hidden>
+        <input th:field="*{id}" hidden type="number">
         <a th:href="@{/children}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input type="submit" class="uk-button uk-button-primary" value="Zapisz">
-
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
     </form>
 </div>
-
 </body>
 </html>
