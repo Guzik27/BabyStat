@@ -21,6 +21,12 @@ public class BabyStatController {
         return "welcome";
     }
 
+    @GetMapping("children/{babyId}")
+    public String babyId() {
+        return "babyId";
+    }
+
+
     @GetMapping("children")
     public String children(Model model) {
         model.addAttribute("children", babyDao.getChildren());
