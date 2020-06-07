@@ -22,10 +22,10 @@ public class BabyStatController {
         return "welcome";
     }
 
-    @GetMapping("children/{select}")
+    /*@GetMapping("children/{select}")
     public String babyId() {
         return "select";
-    }
+    }*/
 
 
     @GetMapping("children")

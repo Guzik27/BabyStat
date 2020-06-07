@@ -11,8 +11,14 @@ public class SelectedEventController {
     @Value("${app.title.select}") // wstrzykiwanie do zmiennej title tego co mamy w application properties
     private String title;
 
-    @GetMapping("select")
+    /*@GetMapping("select")
     public String selectEventPage(Model model) {
+        model.addAttribute("title", title);
+        return "select";
+    }*/
+
+    @GetMapping("children/{select}")
+    public String selectEventOPage(Model model) {
         model.addAttribute("title", title);
         return "select";
     }
