@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.container})}">
+
+<body>
+
+<div class="container">
+    <form style="width: 400px; margin: auto" th:action="@{/select/save}" th:object="${event}" method="post">
+        <div class="uk-margin">
+            <label>ID Test</label>
+            <input th:field="*{id}" class="uk-input" type="number">
+        </div>
+        <div class="uk-margin">
+            <label>Pieluszka mokra</label>
+            <input th:field="*{wet}" class="uk-input" type="boolean">
+        </div>
+        <div class="uk-margin">
+            <label>Pieluszka brudna</label>
+            <input th:field="*{dirty}" class="uk-input" type="boolean">
+        </div>
+        <div class="uk-margin">
+            <label>Ilość pokarmu w przypadku karmienia butelką</label>
+            <input th:field="*{amountOfFood}" class="uk-input" type="number">
+        </div>
+        <div class="uk-margin">
+            <label>Czas karmienia piersią</label>
+            <input th:field="*{feedingTime}" class="uk-input" type="time">
+        </div>
+        <div class="uk-margin">
+            <label>Czas snu</label>
+            <input th:field="*{sleep}" class="uk-input" type="time">
+        </div>
+        <div class="uk-margin">
+            <label>Notatki</label>
+            <input th:field="*{note}" class="uk-input" type="String">
+        </div>
+
+        <input th:field="*{id}" hidden type="number">
+        <a th:href="@{/children/select}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+    </form>
+</div>
+</body>
+</html>

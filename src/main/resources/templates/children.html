@@ -15,7 +15,7 @@
             <td th:text="${baby.id}"></td>
             <td th:text="${baby.name}"></td>
             <td style="width: 250px">
-                <a th:href="@{/children/{id}(id=${baby.id})}"><input class="uk-button uk-button-primary" value="Dodaj zdarzenie" type="button"></a>
+                <a th:href="@{/children/select/{id}(id=${baby.id})}"><input class="uk-button uk-button-primary" value="Dodaj zdarzenie" type="button"></a>
                 <a th:href="@{/children/edit/{id}(id=${baby.id})}"><input class="uk-button uk-button-primary" value="Edytuj" type="button"></a>
                 <a th:href="@{/children/remove/{id}(id=${baby.id})}"><input class="uk-button uk-button-danger" value="Usuń" type="button"></a>
             </td>
