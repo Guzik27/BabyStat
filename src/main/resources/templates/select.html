@@ -17,10 +17,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="event : ${select}">
-            <td th:text="${event.id}"></td>
-            <td th:text="${event.wet}"></td>
-            <td th:text="${event.dirty}"></td>
+        <tr th:each="select : ${event}">
+            <td th:text="${select.id}"></td>
+            <td th:text="${select.wet}"></td>
+            <td th:text="${select.dirty}"></td>
            <!-- <td th:text="${event.amountOfFood}"></td>
             <td th:text="${event.feedingTime}"></td>
             <td th:text="${event.sleep}"></td>
@@ -29,14 +29,14 @@
 <!--
                 <a th:href="@{/children/select/{id}(id=${event.id})}"><input class="uk-button uk-button-primary" value="Dodaj zdarzenie" type="button"></a>
 -->
-                <a th:href="@{/edit/{id}(id=${event.id})}"><input class="uk-button uk-button-primary" value="Edytuj" type="button"></a>
-                <a th:href="@{/remove/{id}(id=${event.id})}"><input class="uk-button uk-button-danger" value="Usuń" type="button"></a>
+                <a th:href="@{/edit/{id}(id=${select.id})}"><input class="uk-button uk-button-primary" value="Edytuj" type="button"></a>
+                <a th:href="@{/remove/{id}(id=${select.id})}"><input class="uk-button uk-button-danger" value="Usuń" type="button"></a>
             </td>
         </tr>
         </tbody>
     </table>
     <div>
-        <a th:href="@{/children/select/${babyId}/new}"><input style="background-color: #32d296; color: white" class="uk-button" value="Dodaj zdarzenie" type="button"></a>
+        <a th:href="@{/children/select/${eventId}/new}"><input style="background-color: #32d296; color: white" class="uk-button" value="Dodaj zdarzenie" type="button"></a>
     </div>
 </div>
 
