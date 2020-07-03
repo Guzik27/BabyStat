@@ -20,13 +20,13 @@ public class SelectedEventController {
 
     @Autowired
     private EventDao eventDao;
+    private BabyDao babyDao;
 
     @Value("${app.title.select}")
     private String title;
 
     @GetMapping("children/select/{babyId}")
     public String selectEventOPage(Model model, @PathVariable String babyId) {
-        model.addAttribute("title", title);
         model.addAttribute("event", eventDao.getEvents());
         return "select";
     }
@@ -38,13 +38,17 @@ public class SelectedEventController {
     }
 
     @GetMapping("children/select/{babyId}/new")
-    public String newEvent(Model model, @PathVariable String babyId) {
+    public String newEvent(Model model, @PathVariable Long babyId) {
+        Baby baby = babyDao.getById(babyId);
+        model.addAttribute("baby", baby);
         model.addAttribute("event", new Event());
         return "event";
     }
 
     @PostMapping("children/select/{babyId}/save")
-    public String saveEvent(Event event, @PathVariable String babyId) {
+    public String saveEvent(Event event, @PathVariable Long babyId, Model model) {
+        Baby baby = babyDao.getById(babyId);
+        model.addAttribute("baby", baby);
         eventDao.saveEvent(event);
         return "select";
     }
